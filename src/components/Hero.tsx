@@ -1,6 +1,9 @@
 import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Hero() {
+    const navigate = useNavigate();
+
     return (
         <section className="pt-32 pb-16 px-6">
             <div className="container text-center max-w-4xl mx-auto">
@@ -25,7 +28,10 @@ export default function Hero() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <button className="btn btn-primary text-lg px-8 py-4 shadow-lg shadow-sky-500/25">
+                    <button
+                        onClick={() => navigate('/demo')}
+                        className="btn btn-primary text-lg px-8 py-4 shadow-lg shadow-sky-500/25"
+                    >
                         Start Free Negotiation
                         <ArrowRight className="ml-2 w-5 h-5" />
                     </button>
